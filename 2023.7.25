@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>参见p5</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    #div1{
+        height: fit-content;/*宽度和内容相适应*/
+        width: fit-content;
+    }
+    /*button{
+    float: left;默认padding去除之后，按钮之间有间隙，这是inline-block默认的间距，用float来去除*/
+    /*但是不知道为什么，button向左浮动后，下面的div也跟着浮动了*/
+    #div1 .active{
+        background-color: yellow;
+        border:none;
+    }
+    #div1 div{
+        height: 200px;
+        background-color: yellow;
+        border: ipx solid #999;
+        display: none;
+    }
+</style>
+<script>
+    window.onload = function()
+    {
+        var oDiv = document.getElementById('div1');
+        var aBtn = oDiv.getElementsByTagName('button');
+        var aDiv = oDiv.getElementsByTagName('div');
+
+        for(var i = 0;i < aBtn.length;i++)
+        {
+            aBtn[i].index = i;
+            aBtn[i].onclick = function()
+            {
+                for(var i = 0;i < aBtn.length;i++)
+                {
+                    aBtn[i].className='';
+                    aDiv[i].style.display='none';
+                }
+                this.className = 'active';
+                oDiv.style.backgroundColor = 'yellow';
+                aDiv[this.index].style.display='block';
+            }/*oBtn[i].style[background-color]='blue';这样写不对*/
+        }
+    }
+</script>
+</head>
+<body>
+    <div id="div1">
+        <button type="button">教育</button>
+        <button type="button">培训</button>
+        <button type="button">招生</button>
+        <button type="button">出国</button>
+        <div>111</div>
+        <div>222</div>
+        <div>333</div>
+        <div>444</div>
+    </div>   
+</body>
+</html>
