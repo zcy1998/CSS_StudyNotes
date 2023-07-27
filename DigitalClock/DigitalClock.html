@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数字时钟</title>
+<style>
+body{
+    background-color: #ccc;
+    color:black;
+    font-size: 50px;
+}
+img{
+    width: 10%;
+    height: 10%;
+}
+</style>
+<script>
+function toDou(n)//补全从系统获取到的时间
+{
+    if(n < 10)
+    {
+        return '0'+n;
+    }
+    else
+    {
+        return ''+n;//保证了返回的一定是个字符串
+    }
+}
+window.onload = function()
+{
+    var aImg = document.getElementsByTagName('img');
+    //测试var str = '121231';
+    function tick()
+    {
+        var oDate = new Date();//获取系统时间
+
+        var str = toDou(oDate.getHours())+toDou(oDate.getMinutes())+toDou(oDate.getSeconds());
+
+            for(var i=0;i < aImg.length;i++)
+            {
+                aImg[i].src='./imgs/img_'+str[i]+'.png';
+            }
+    }
+    setInterval(tick,1000);
+    tick();//避免出现一刷新会出现全0的情况
+}
+</script>
+</head>
+<body>
+<img src="./imgs/img_0.png">
+<img src="./imgs/img_0.png">
+:
+<img src="./imgs/img_0.png">
+<img src="./imgs/img_0.png">
+:
+<img src="./imgs/img_0.png">
+<img src="./imgs/img_0.png">
+</body>
+</html>
