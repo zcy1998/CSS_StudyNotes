@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023/8/1-66</title>
+<script>
+    /*
+    题目一：
+
+    var a = 1//声明全局变量a
+    function fn(){
+        a = 2//这里并不代表声明一个局部变量a
+        //实际上指向的也是全局变量a
+        //假如这里写的是var a = 2，那么后续的打印结果就是2，1
+        console.log(a)
+    }
+    fn()//打印2
+    console.log(a)//打印2
+    */
+
+    /*
+    题目二：
+
+    var a = 1
+    function fn(){
+        //这里相当于有一句var = a，需要注意的是，只有声明没有赋值
+        //所以第一次打印a才会出现undefined
+        console.log(a)//undefined
+        //变量和函数的提升同样适用于函数作用域
+        //所以下面这行代码会在函数作用域内声明提升
+        var a = 2
+        console.log(a)//2
+    }
+    fn()
+    console.log(a)//1，打印的是全局的a
+    */
+
+    /*
+    题目三：
+
+    var a = 1
+    function fn(a){//声明了形参就相当于在函数中声明了对应的变量，但没有赋值
+        //这里相当于有一句 var a
+        console.log(a)//undefined
+        a = 2//给函数中的局部变量赋值
+        console.log(a)//2，打印局部a
+    }
+    fn()
+    console.log(a)//1，打印全局a
+    */
+
+    /*
+    题目四：
+
+    var a = 1
+    function fn(a){
+        console.log(a)//1，这里打印的是局部变量a
+        a = 2
+        console.log(a)//2
+    }
+    fn(a)//把全局a的至传进去，而不是传a
+    console.log(a)//1，全局a
+    */
+
+    /*
+    题目五：
+
+    console.log(a)//2，打印的是第一个function a
+    //变量a和函数a都被提升，但是前者不会赋值
+    
+    var a = 1
+
+    console.log(a)//1
+
+    function a(){//这段函数声明代码已经被提前执行了
+        alert(2)
+    }
+    console.log(a)//1，这里的代码不受上面这段函数声明影响
+
+    var a = 3//这是对第一个变量a的重复声明
+    console.log(a)//3
+
+    var a = function()//这是对变量a赋值
+    {
+        alert(4)
+    }
+    console.log(a)//4
+
+    var a //这行代码没有用
+    console.log(a)//4
+    */
+</script>
+</head>
+<body>
+    
+</body>
+</html>
