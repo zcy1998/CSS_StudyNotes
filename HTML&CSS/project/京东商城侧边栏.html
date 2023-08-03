@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>京东商城侧边栏</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <style>
+    /*自己的样式要在重置样式表之后，否则可能会被重置样式表覆盖*/
+    body{
+        background-color: gray;
+    }
+    .big-module{
+        margin-top: 262px;
+        height: 430px;
+        width: 190px;
+        background-color:white;
+    }
+
+    .big-module a{
+        text-decoration: none;
+        color: black;
+        font-size: 14px;/*a标签是li的后代元素，所以会继承li里的字体大小12px*/
+        /*但是由于a标签又重新设置了字体大小，所以a标签里面的符号就变成了14px，但是斜线仍然是12px*/
+    }
+    .big-module li{
+        font-size: 12px;
+        padding-left: 18px;/*在这里不能使用margin-left，因为这样会让元素增加外部距离，就不能在指入时变色*/
+        /*border是盒子的边框，border里面的属于盒子的内部（content、padding）*/
+        line-height: 23px;
+        /*要让一个文字在父元素中垂直居中，需要把父元素的line-height和父元素的height设置成一样即可*/
+    }
+    .big-module a:hover{
+        color: brown;
+
+    }
+    .big-module li:hover{
+        background-color: #d9d9d9;
+    }
+    </style>
+</head>
+<body>
+    <!--
+        思路：首先要有一个容器，把导航内容装进去,可以是nav,div(div),ul
+        用ul、li、a标签容纳导航内容
+        由于每一行都是垂直分布，所以不用浮动
+    -->
+    <ul class="big-module">
+        <li>
+            <a href="">家用电器</a>
+        </li>
+        <li>
+            <a href="">手机</a>/<a href="">运营商</a>/<a href="">数码</a>
+        </li>
+        <li>
+            <a href="">电脑</a>/<a href="">办公</a>
+        </li>
+        <li>
+            <a href="">家居</a>/<a href="">家具</a>/<a href="">家装</a>/<a href="">厨具</a>
+        </li>
+        <li>
+            <a href="">男装</a>/<a href="">女装</a>/<a href="">童装</a>/<a href="">内衣</a>
+        </li>
+        <li>
+            <a href="">美妆</a>/<a href="">个护清洁</a>/<a href="">宠物</a>
+        </li>
+        <li>
+            <a href="">女鞋</a>/<a href="">箱包</a>/<a href="">钟表</a>/<a href="">珠宝</a>
+        </li>
+        <li>
+            <a href="">男鞋</a>/<a href="">运动</a>/<a href="">户外</a>
+        </li>
+        <li>
+            <a href="">房产</a>/<a href="">汽车</a>/<a href="">汽车用品</a>
+        </li>
+        <li>
+            <a href="">母婴</a>/<a href="">玩具乐器</a>
+        </li>
+        <li>
+            <a href="">食品</a>/<a href="">酒类</a>/<a href="">生鲜</a>/<a href="">特产</a>
+        </li>
+        <li>
+            <a href="">艺术</a>/<a href="">礼品鲜花</a>/<a href="">农牧园艺</a>
+        </li>
+        <li>
+            <a href="">医药保健</a>/<a href="">计生情趣</a>
+        </li>
+        <li>
+            <a href="">图书</a>/<a href="">文娱</a>/<a href="">教育</a>/<a href="">电子书</a>
+        </li>
+        <li>
+            <a href="">机票</a>/<a href="">酒店</a>/<a href="">旅游</a>/<a href="">生活</a>
+        </li>
+        <li>
+            <a href="">支付</a>/<a href="">白条</a>/<a href="">保险</a>/<a href="">企业金融</a>
+        </li>
+        <li>
+            <a href="">安装</a>/<a href="">维修</a>/<a href="">清洗</a>/<a href="">二手</a>
+        </li>
+        <li>
+            <a href="">工业品</a>/<a href="">元器件</a>
+        </li>
+    </ul>
+</body>
+</html>
