@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>删除数组中重复元素3</title>
+<script>
+    //一种不破坏原数组的方法
+    const newArr=[]
+
+    for(let ele of arr){
+        if(newArr.indexOf(ele)===-1){//只要新添加的元素没有和已添加元素相同的情况
+            newArr.push(ele)//就把该元素加入数组
+        }
+    }
+
+    console.log(newArr)
+</script>
+</head>
+<body>
+    
+</body>
+</html>
