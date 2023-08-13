@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 640px;
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <p id="info">
+            总共有n张图片，当前是第m张
+        </p>
+        <div class="img-wrapper">
+            <img src="./images/1.png" alt="这是一个图片">
+        </div>
+
+        <div class="btn-wrapper">
+            <button id="prev">上一张</button>
+            <button id="next">下一张</button>
+        </div>
+    </div>
+
+    <script>
+        (function(){
+            const img = document.getElementsByTagName("img")[0]//这里不要忘记索引
+            const prev = document.getElementById("prev")
+            const next = document.getElementById("next")
+            const info = document.getElementById("info")
+
+            const imgArr = ["./images/1.png",
+            "./images/2.png",
+            "./images/3.png",
+            "./images/4.png",
+            "./images/5.png"
+        ]
+
+        let current = 0
+
+            prev.onclick = function(){
+                if(current===0){
+                    current = imgArr.length - 1
+                    img.src = imgArr[current]
+                }else{
+                    current--
+                    img.src = imgArr[current]
+                }
+                info.innerText = `总共${imgArr.length}张图片，当前第${current +1}张`
+            }
+
+            next.onclick = function(){
+                if(current===4){
+                    current = 0 
+                    img.src = imgArr[current]
+                }else{
+                    current++
+                    img.src = imgArr[current]
+                }
+                info.innerText = `总共${imgArr.length}张图片，当前第${current +1}张`
+            }
+
+            info.innerText = `总共${imgArr.length}张图片，当前第${current +1}张`//textContent方法也可以
+
+        })()
+        
+
+
+    </script>
+</body>
+</html>
